@@ -1,0 +1,106 @@
+{
+  "name": "turtlecoin-wallet-backend",
+  "version": "6.0.7",
+  "description": "",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run-script build",
+    "build": "./node_modules/.bin/tsc",
+    "test": "npm run-script build && node dist/tests/tests.js",
+    "test-all": "npm run-script build && node dist/tests/tests.js --do-performance-tests",
+    "style": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "docs": "./node_modules/.bin/typedoc --options ./typedoc.js ./lib/ && touch docs/.nojekyll",
+    "prepare": "npm run-script build"
+  },
+  "files": [
+    "dist/lib/*"
+  ],
+  "keywords": [],
+  "author": "zpalmtree <22151537+zpalmtree@users.noreply.github.com>",
+  "contributors": [
+    "Brandon Lehmann <brandonlehmann@gmail.com>"
+  ],
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "object-sizeof": "https://github.com/zpalmtree/sizeof",
+    "pbkdf2": "^3.0.17",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.8",
+    "turtlecoin-utils": "^3.0.9",
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/ledgerhq__hw-transport": "^4.21.3",
+    "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.31",
+    "@types/pbkdf2": "^3.0.0",
+    "@types/request-promise-native": "^1.0.17",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "colors": "^1.4.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.5.4",
+    "typedoc": "^0.18.0",
+    "typedoc-plugin-no-inherit": "^1.1.10"
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "yarn style",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "optionalDependencies": {
+    "@ledgerhq/hw-transport-node-hid": "^5.22.0"
+  },
+  "react-native": {
+    "zlib": "browserify-zlib",
+    "console": "console-browserify",
+    "crypto": "react-native-crypto",
+    "net": "react-native-tcp",
+    "http": "@tradle/react-native-http",
+    "https": "https-browserify",
+    "path": "path-browserify",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "dgram": "react-native-udp",
+    "stream": "stream-browserify",
+    "vm": "vm-browserify",
+    "tls": false
+  },
+  "browser": {
+    "zlib": "browserify-zlib",
+    "console": "console-browserify",
+    "crypto": "react-native-crypto",
+    "net": "react-native-tcp",
+    "http": "@tradle/react-native-http",
+    "https": "https-browserify",
+    "path": "path-browserify",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "dgram": "react-native-udp",
+    "stream": "stream-browserify",
+    "vm": "vm-browserify",
+    "tls": false
+  }
+}
