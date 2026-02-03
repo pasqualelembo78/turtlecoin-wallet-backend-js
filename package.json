@@ -28,7 +28,7 @@
     "pbkdf2": "^3.0.17",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
-    "turtlecoin-utils": "^3.0.9",
+    "turtlecoin-utils": "git+https://github.com/pasqualelembo78/turtlecoin-utils.git",
     "typescript": "^4.1.5"
   },
   "devDependencies": {
